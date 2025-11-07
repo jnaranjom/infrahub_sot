@@ -1,0 +1,20 @@
+---
+version: "1.0"
+
+nodes:
+- name: Interface
+  namespace: Network
+  attributes:
+  - name: name
+    label: Name
+    kind: Text
+  - name: description
+    kind: Text
+    label: Description
+    optional: true
+
+  relationships:
+  - name: device
+    peer: NetworkDevice
+    cardinality: one
+    label: Device
