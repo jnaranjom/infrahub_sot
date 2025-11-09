@@ -2,65 +2,65 @@
 version: "1.0"
 
 nodes:
-- name: Site
-  label: Sites
-  include_in_menu: false
-  icon: "mdi:map-marker"
-  namespace: Organization
-  human_friendly_id:
-  - site__value
-  inherit_from:
-  - StatusLocation
-  attributes:
-  - name: site
-    label: Site
-    kind: Text
-  - name: description
-    kind: Text
-    label: Description
-    optional: true
-  - name: site_code
-    kind: Text
-    label: Site Code
-    optional: true
-  - name: address
-    kind: Text
-    label: Address
-    optional: true
+  - name: Site
+    label: Sites
+    include_in_menu: false
+    icon: "mdi:map-marker"
+    namespace: Organization
+    human_friendly_id:
+      - site__value
+    inherit_from:
+      - StatusLocation
+    attributes:
+      - name: site
+        label: Site
+        kind: Text
+      - name: description
+        kind: Text
+        label: Description
+        optional: true
+      - name: site_code
+        kind: Text
+        label: Site Code
+        optional: true
+      - name: address
+        kind: Text
+        label: Address
+        optional: true
 
-  relationships:
-  - name: buildings
-    peer: OrganizationBuilding
-    cardinality: many
+    relationships:
+      - name: buildings
+        peer: OrganizationBuilding
+        cardinality: many
+        label: Buildings
+        kind: Component
+
+  - name: Building
     label: Buildings
-    kind: Component
+    include_in_menu: false
+    icon: "mdi:map-marker"
+    namespace: Organization
+    human_friendly_id:
+      - name__value
+    inherit_from:
+      - StatusLocation
+    attributes:
+      - name: name
+        label: Name
+        kind: Text
+      - name: description
+        kind: Text
+        label: Description
+        optional: true
+      - name: building_code
+        kind: Text
+        label: Building Code
+        optional: true
 
-- name: Building
-  label: Buildings
-  include_in_menu: false
-  icon: "mdi:map-marker"
-  namespace: Organization
-  human_friendly_id:
-  - name__value
-  inherit_from:
-  - StatusLocation
-  attributes:
-  - name: name
-    label: Name
-    kind: Text
-  - name: description
-    kind: Text
-    label: Description
-    optional: true
-  - name: building_code
-    kind: Text
-    label: Building Code
-    optional: true
-
-  relationships:
-  - name: site
-    peer: OrganizationSite
-    cardinality: one
-    label: Site
-    kind: Parent
-    optional: false
+    relationships:
+      - name: site
+        peer: OrganizationSite
+        cardinality: one
+        label: Site
+        kind: Parent
+        optional: false

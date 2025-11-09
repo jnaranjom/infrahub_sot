@@ -2,115 +2,115 @@
 version: "1.0"
 
 generics:
-- name: Device
-  label: Device Statuses
-  include_in_menu: false
-  icon: "mdi:information-outline"
-  namespace: Status
-  attributes:
-  - name: status
-    label: Status
-    kind: Dropdown
-    optional: true
-    unique: false
-    choices:
-    - name: active
-      label: Active
-    - name: inactive
-      label: Inactive
-    - name: planned
-      label: Planned
-    - name: decommissioned
-      label: Decommissioned
-    default_value: planned
+  - name: Device
+    label: Device Statuses
+    include_in_menu: false
+    icon: "mdi:information-outline"
+    namespace: Status
+    attributes:
+      - name: status
+        label: Status
+        kind: Dropdown
+        optional: true
+        unique: false
+        choices:
+          - name: active
+            label: Active
+          - name: inactive
+            label: Inactive
+          - name: planned
+            label: Planned
+          - name: decommissioned
+            label: Decommissioned
+        default_value: planned
 
-- name: Interface
-  label: Interface Statuses
-  include_in_menu: false
-  icon: "mdi:information-outline"
-  namespace: Status
-  attributes:
-  - name: status
-    label: Status
-    kind: Dropdown
-    optional: true
-    unique: false
-    choices:
-    - name: planned
-      label: Planned
-    - name: connected
-      label: Connected
-    - name: disconnected
-      label: Disconnected
-    - name: offline
-      label: Offline
-    - name: maintenance
-      label: Maintenance
-    default_value: planned
+  - name: Interface
+    label: Interface Statuses
+    include_in_menu: false
+    icon: "mdi:information-outline"
+    namespace: Status
+    attributes:
+      - name: status
+        label: Status
+        kind: Dropdown
+        optional: true
+        unique: false
+        choices:
+          - name: planned
+            label: Planned
+          - name: connected
+            label: Connected
+          - name: disconnected
+            label: Disconnected
+          - name: offline
+            label: Offline
+          - name: maintenance
+            label: Maintenance
+        default_value: planned
 
-- name: Link
-  label: Link Statuses
-  include_in_menu: false
-  icon: "mdi:information-outline"
-  namespace: Status
-  attributes:
-  - name: status
-    label: Status
-    kind: Dropdown
-    optional: true
-    unique: false
-    choices:
-    - name: active
-      label: Active
-    - name: inactive
-      label: Inactive
-    - name: planned
-      label: Planned
-    - name: decommissioned
-      label: Decommissioned
-    default_value: planned
+  - name: Link
+    label: Link Statuses
+    include_in_menu: false
+    icon: "mdi:information-outline"
+    namespace: Status
+    attributes:
+      - name: status
+        label: Status
+        kind: Dropdown
+        optional: true
+        unique: false
+        choices:
+          - name: active
+            label: Active
+          - name: inactive
+            label: Inactive
+          - name: planned
+            label: Planned
+          - name: decommissioned
+            label: Decommissioned
+        default_value: planned
 
-- name: Location
-  label: Organization Location Status
-  include_in_menu: false
-  icon: "mdi:information-outline"
-  namespace: Status
-  attributes:
-  - name: status
-    label: Status
-    kind: Dropdown
-    optional: true
-    unique: false
-    choices:
-    - name: operational
-      label: Operational
-    - name: non_operational
-      label: Non-Operational
-    - name: planned
-      label: Planned
-    - name: closed
-      label: Closed
-    default_value: planned
+  - name: Location
+    label: Organization Location Status
+    include_in_menu: false
+    icon: "mdi:information-outline"
+    namespace: Status
+    attributes:
+      - name: status
+        label: Status
+        kind: Dropdown
+        optional: true
+        unique: false
+        choices:
+          - name: operational
+            label: Operational
+          - name: non_operational
+            label: Non-Operational
+          - name: planned
+            label: Planned
+          - name: closed
+            label: Closed
+        default_value: planned
 
-- name: Network
-  label: Logical Network Statuses
-  include_in_menu: false
-  icon: "mdi:information-outline"
-  namespace: Status
-  human_friendly_id:
-  - status__value
-  attributes:
-  - name: status
-    label: Status
-    kind: Dropdown
-    optional: true
-    unique: false
-    choices:
-    - name: active
-      label: Active
-    - name: inactive
-      label: Inactive
-    - name: planned
-      label: Planned
-    - name: decommissioned
-      label: Decommissioned
+  - name: Network
+    label: Logical Network Statuses
+    include_in_menu: false
+    icon: "mdi:information-outline"
+    namespace: Status
+    human_friendly_id:
+      - status__value
+    attributes:
+      - name: status
+        label: Status
+        kind: Dropdown
+        optional: true
+        unique: false
+        choices:
+          - name: active
+            label: Active
+          - name: inactive
+            label: Inactive
+          - name: planned
+            label: Planned
+          - name: decommissioned
+            label: Decommissioned

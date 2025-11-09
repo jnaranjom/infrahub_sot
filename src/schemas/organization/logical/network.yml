@@ -2,54 +2,66 @@
 version: "1.0"
 
 generics:
-- name: LogicalNetwork
-  label: Logical Network
-  include_in_menu: false
-  icon: "mdi:network"
-  namespace: Network
-  display_labels:
-  - name__value
-  human_friendly_id:
-  - name__value
-  attributes:
-  - name: name
-    label: Name
-    kind: Text
-  - name: description
-    kind: Text
-    label: Description
-    optional: true
+  - name: LogicalNetwork
+    label: Logical Network
+    include_in_menu: false
+    icon: "mdi:network"
+    namespace: Network
+    display_labels:
+      - name__value
+    human_friendly_id:
+      - name__value
+    attributes:
+      - name: name
+        label: Name
+        kind: Text
+      - name: description
+        kind: Text
+        label: Description
+        optional: true
 
-  relationships:
-  - name: devices
-    peer: NetworkDevice
-    cardinality: many
-    label: Devices
+    relationships:
+      - name: devices
+        peer: NetworkDevice
+        cardinality: many
+        label: Devices
+
+      - name: building
+        peer: OrganizationBuilding
+        cardinality: one
+        label: Building
+        kind: Attribute
+
+      - name: site
+        peer: OrganizationSite
+        cardinality: one
+        label: Site
+        kind: Attribute
 
 nodes:
-- name: OOBNetwork
-  label: Out-of-Band Networks
-  icon: "mdi:lan"
-  include_in_menu: false
-  namespace: Network
-  inherit_from:
-  - StatusNetwork
-  - NetworkLogicalNetwork
+  - name: OOBNetwork
+    label: Out-of-Band Networks
+    icon: "mdi:lan"
+    include_in_menu: false
+    namespace: Network
+    inherit_from:
+      - StatusNetwork
+      - NetworkLogicalNetwork
 
-- name: DcFabric
-  label: Data Center Fabrics
-  include_in_menu: false
-  icon: "mdi:network"
-  namespace: Network
-  inherit_from:
-  - StatusNetwork
-  - NetworkLogicalNetwork
+  - name: DcFabric
+    label: Data Center Fabrics
+    include_in_menu: false
+    icon: "mdi:network"
+    namespace: Network
+    inherit_from:
+      - StatusNetwork
+      - NetworkLogicalNetwork
 
-- name: WAN
-  label: WANs
-  icon: "mdi:cloud-outline"
-  include_in_menu: false
-  namespace: Network
-  inherit_from:
-  - StatusNetwork
-  - NetworkLogicalNetwork
+  - name: WAN
+    label: WANs
+    icon: "mdi:cloud-outline"
+    include_in_menu: false
+    namespace: Network
+    inherit_from:
+      - StatusNetwork
+      - NetworkLogicalNetwork
