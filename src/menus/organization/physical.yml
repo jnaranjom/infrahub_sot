@@ -4,20 +4,20 @@ apiVersion: infrahub.app/v1
 kind: Menu
 spec:
   data:
-  - namespace: Organization
-    order_weight: 1000
-    name: Mainmenu
-    label: Locations
-    icon: "mdi-map-marker"
-    children:
-      data:
-      - namespace: Organization
-        name: Site
-        label: Sites
-        kind: OrganizationSite
-        icon: "mdi:building"
-      - namespace: Organization
-        name: Building
-        label: Buildings
-        kind: OrganizationBuilding
-        icon: "mdi:office-building"
+    - namespace: Organization
+      order_weight: 1000
+      name: Mainmenu
+      label: Locations
+      icon: "mdi-map-marker"
+      children:
+        data:
+          - namespace: Organization
+            name: Site
+            label: Sites
+            kind: OrganizationSite
+            icon: "mdi:building"
+          - namespace: Organization
+            name: Building
+            label: Buildings
+            kind: OrganizationBuilding
+            icon: "mdi:office-building"

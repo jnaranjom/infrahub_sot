@@ -4,33 +4,33 @@ apiVersion: infrahub.app/v1
 kind: Menu
 spec:
   data:
-  - namespace: Device
-    order_weight: 3000
-    name: Mainmenu
-    label: Devices
-    icon: "mdi:router"
-    children:
-      data:
-      - namespace: Device
-        name: Device
-        label: Devices
-        kind: NetworkDevice
-        icon: "mdi:router"
+    - namespace: Device
+      order_weight: 3000
+      name: Mainmenu
+      label: Devices
+      icon: "mdi:router"
+      children:
+        data:
+          - namespace: Device
+            name: Device
+            label: Devices
+            kind: NetworkDevice
+            icon: "mdi:router"
 
-      - namespace: Device
-        name: DeviceType
-        label: Device Types
-        kind: NetworkDeviceType
-        icon: "mdi:router"
+          - namespace: Device
+            name: DeviceType
+            label: Device Types
+            kind: NetworkDeviceType
+            icon: "mdi:router"
 
-      - namespace: Device
-        name: Interface
-        label: Interfaces
-        kind: NetworkInterface
-        icon: "mdi:ethernet-cable"
+          - namespace: Device
+            name: Interface
+            label: Interfaces
+            kind: NetworkInterface
+            icon: "mdi:ethernet-cable"
 
-      - namespace: Device
-        name: Links
-        label: Links
-        kind: NetworkLink
-        icon: "mdi:cable-data"
+          - namespace: Device
+            name: Links
+            label: Links
+            kind: NetworkLink
+            icon: "mdi:cable-data"
