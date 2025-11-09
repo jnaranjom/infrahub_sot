@@ -3,6 +3,9 @@ version: "1.0"
 
 nodes:
 - name: Interface
+  label: Interfaces
+  include_in_menu: false
+  icon: "mdi:link"
   namespace: Network
   attributes:
   - name: name

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://schema.infrahub.app/infrahub/menu/latest.json
+---
+apiVersion: infrahub.app/v1
+kind: Menu
+spec:
+  data:
+  - namespace: Location
+    order_weight: 1000
+    name: Mainmenu
+    label: Locations
+    icon: "mdi-map-marker"
+    children:
+      data:
+      - namespace: Location
+        name: Site
+        label: Sites
+        kind: LocationSite
+        icon: "mdi:building"
+      - namespace: Location
+        name: Building
+        label: Buildings
+        kind: LocationBuilding
+        icon: "mdi:office-building"
