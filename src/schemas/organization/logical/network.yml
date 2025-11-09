@@ -7,6 +7,8 @@ generics:
   include_in_menu: false
   icon: "mdi:network"
   namespace: Network
+  display_labels:
+  - name__value
   human_friendly_id:
   - name__value
   attributes:
@@ -30,8 +32,6 @@ nodes:
   icon: "mdi:lan"
   include_in_menu: false
   namespace: Network
-  human_friendly_id:
-  - name__value
   inherit_from:
   - StatusNetwork
   - NetworkLogicalNetwork
@@ -41,8 +41,6 @@ nodes:
   include_in_menu: false
   icon: "mdi:network"
   namespace: Network
-  human_friendly_id:
-  - name__value
   inherit_from:
   - StatusNetwork
   - NetworkLogicalNetwork
@@ -52,8 +50,6 @@ nodes:
   icon: "mdi:cloud-outline"
   include_in_menu: false
   namespace: Network
-  human_friendly_id:
-  - name__value
   inherit_from:
   - StatusNetwork
   - NetworkLogicalNetwork

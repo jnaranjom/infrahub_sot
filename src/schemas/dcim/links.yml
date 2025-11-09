@@ -5,16 +5,17 @@ nodes:
 - name: Link
   label: Links
   include_in_menu: false
-  human_friendly_id:
-  - name__value
   icon: "mdi:cable-data"
   namespace: Network
+  display_labels:
+  - name__value
   inherit_from:
   - StatusLink
   attributes:
   - name: name
     label: Name
     kind: Text
+    unique: false
   - name: description
     kind: Text
     label: Description

@@ -30,6 +30,8 @@ generics:
   - name: interfaces
     peer: NetworkInterface
     cardinality: many
+    kind: Component
+    identifier: device__interfaces
     label: Interfaces
 
   - name: location

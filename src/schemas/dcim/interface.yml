@@ -11,6 +11,9 @@ generics:
   - name__value
   display_labels:
   - name__value
+  human_friendly_id:
+  - device__hostname__value
+  - name__value
   attributes:
   - name: name
     label: Name
@@ -22,9 +25,12 @@ generics:
 
   relationships:
   - name: device
-    peer: NetworkDevice
-    cardinality: one
     label: Device
+    peer: NetworkGenericDevice
+    kind: Parent
+    optional: false
+    cardinality: one
+    identifier: device__interfaces
 
 nodes:
 - name: Interface
@@ -36,3 +42,10 @@ nodes:
   - StatusInterface
   - NetworkGenericInterface
   - RoleInterface
+
+  relationships:
+  - name: link
+    peer: NetworkLink
+    cardinality: one
+    kind: Attribute
+    optional: true
