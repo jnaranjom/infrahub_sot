@@ -1,0 +1,31 @@
+---
+version: "1.0"
+
+nodes:
+- name: Link
+  label: Links
+  include_in_menu: false
+  human_friendly_id:
+  - name__value
+  icon: "mdi:cable-data"
+  namespace: Network
+  inherit_from:
+  - StatusLink
+  attributes:
+  - name: name
+    label: Name
+    kind: Text
+  - name: description
+    kind: Text
+    label: Description
+    optional: true
+
+  relationships:
+  - name: endpoints
+    peer: NetworkInterface
+    cardinality: many
+    label: endpoints
+    kind: Attribute
+    optional: true
+    min_count: 2
+    max_count: 2

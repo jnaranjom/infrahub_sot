@@ -1,11 +1,16 @@
 ---
 version: "1.0"
 
-nodes:
-- name: Device
-  namespace: Network
-  icon: "mdi:router"
+generics:
+- name: GenericDevice
+  label: Generic Devices
   include_in_menu: false
+  icon: "mdi:information-outline"
+  namespace: Network
+  order_by:
+  - hostname__value
+  display_labels:
+  - hostname__value
   human_friendly_id:
   - hostname__value
   attributes:
@@ -37,11 +42,24 @@ nodes:
     cardinality: one
     label: Device Type
 
+nodes:
+- name: Device
+  namespace: Network
+  icon: "mdi:router"
+  include_in_menu: false
+  generate_template: true
+  inherit_from:
+  - NetworkGenericDevice
+  - StatusDevice
+  - RoleDevice
+
 - name: DeviceType
   label: Device Type
   include_in_menu: false
   icon: "mdi:router"
   namespace: Network
+  display_labels:
+  - model__value
   human_friendly_id:
   - model__value
   attributes:

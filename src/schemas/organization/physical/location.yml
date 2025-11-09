@@ -9,6 +9,8 @@ nodes:
   namespace: Organization
   human_friendly_id:
   - site__value
+  inherit_from:
+  - StatusLocation
   attributes:
   - name: site
     label: Site
@@ -40,6 +42,8 @@ nodes:
   namespace: Organization
   human_friendly_id:
   - name__value
+  inherit_from:
+  - StatusLocation
   attributes:
   - name: name
     label: Name

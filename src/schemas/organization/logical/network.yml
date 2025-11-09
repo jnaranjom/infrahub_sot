@@ -1,31 +1,9 @@
 ---
 version: "1.0"
 
-nodes:
-- name: OOBNetwork
-  label: Out-of-Band Networks
-  icon: "mdi:lan"
-  include_in_menu: false
-  namespace: Network
-  human_friendly_id:
-  - name__value
-  attributes:
-  - name: name
-    label: Name
-    kind: Text
-  - name: description
-    kind: Text
-    label: Description
-    optional: true
-
-  relationships:
-  - name: devices
-    peer: NetworkDevice
-    cardinality: many
-    label: Devices
-
-- name: DcFabric
-  label: Data Center Fabrics
+generics:
+- name: LogicalNetwork
+  label: Logical Network
   include_in_menu: false
   icon: "mdi:network"
   namespace: Network
@@ -46,6 +24,29 @@ nodes:
     cardinality: many
     label: Devices
 
+nodes:
+- name: OOBNetwork
+  label: Out-of-Band Networks
+  icon: "mdi:lan"
+  include_in_menu: false
+  namespace: Network
+  human_friendly_id:
+  - name__value
+  inherit_from:
+  - StatusNetwork
+  - NetworkLogicalNetwork
+
+- name: DcFabric
+  label: Data Center Fabrics
+  include_in_menu: false
+  icon: "mdi:network"
+  namespace: Network
+  human_friendly_id:
+  - name__value
+  inherit_from:
+  - StatusNetwork
+  - NetworkLogicalNetwork
+
 - name: WAN
   label: WANs
   icon: "mdi:cloud-outline"
@@ -53,17 +54,6 @@ nodes:
   namespace: Network
   human_friendly_id:
   - name__value
-  attributes:
-  - name: name
-    label: Name
-    kind: Text
-  - name: description
-    kind: Text
-    label: Description
-    optional: true
-
-  relationships:
-  - name: devices
-    peer: NetworkDevice
-    cardinality: many
-    label: Devices
+  inherit_from:
+  - StatusNetwork
+  - NetworkLogicalNetwork

@@ -1,12 +1,16 @@
 ---
 version: "1.0"
 
-nodes:
-- name: Interface
-  label: Interfaces
+generics:
+- name: GenericInterface
+  label: Generic Interfaces
   include_in_menu: false
-  icon: "mdi:link"
+  icon: "mdi:information-outline"
   namespace: Network
+  order_by:
+  - name__value
+  display_labels:
+  - name__value
   attributes:
   - name: name
     label: Name
@@ -21,3 +25,14 @@ nodes:
     peer: NetworkDevice
     cardinality: one
     label: Device
+
+nodes:
+- name: Interface
+  label: Interfaces
+  include_in_menu: false
+  icon: "mdi:ethernet-cable"
+  namespace: Network
+  inherit_from:
+  - StatusInterface
+  - NetworkGenericInterface
+  - RoleInterface
