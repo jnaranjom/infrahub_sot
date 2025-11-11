@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://schema.infrahub.app/infrahub/menu/latest.json
+---
+apiVersion: infrahub.app/v1
+kind: Menu
+spec:
+  data:
+    - namespace: Logicalnetwork
+      order_weight: 2000
+      name: Mainmenu
+      label: Logical Networks
+      icon: "mdi:network-outline"
+      children:
+        data:
+          - namespace: Logicalnetwork
+            name: Out-of-Band Network
+            label: Out-of-Band Networks
+            kind: NetworkOOBNetwork
+            icon: "mdi:lan"
+          - namespace: Logicalnetwork
+            name: Data Center Fabric
+            label: Data Center Fabrics
+            kind: NetworkDcFabric
+            icon: "mdi:network"
+          - namespace: Logicalnetwork
+            name: WAN
+            label: WANs
+            kind: NetworkWAN
+            icon: "mdi:cloud-outline"

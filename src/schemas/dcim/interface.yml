@@ -1,0 +1,51 @@
+---
+version: "1.0"
+
+generics:
+  - name: GenericInterface
+    label: Generic Interfaces
+    include_in_menu: false
+    icon: "mdi:information-outline"
+    namespace: Network
+    order_by:
+      - name__value
+    display_labels:
+      - name__value
+    human_friendly_id:
+      - device__hostname__value
+      - name__value
+    attributes:
+      - name: name
+        label: Name
+        kind: Text
+      - name: description
+        kind: Text
+        label: Description
+        optional: true
+
+    relationships:
+      - name: device
+        label: Device
+        peer: NetworkGenericDevice
+        kind: Parent
+        optional: false
+        cardinality: one
+        identifier: device__interfaces
+
+nodes:
+  - name: Interface
+    label: Interfaces
+    include_in_menu: false
+    icon: "mdi:ethernet-cable"
+    namespace: Network
+    inherit_from:
+      - StatusInterface
+      - NetworkGenericInterface
+      - RoleInterface
+
+    relationships:
+      - name: link
+        peer: NetworkLink
+        cardinality: one
+        kind: Attribute
+        optional: true

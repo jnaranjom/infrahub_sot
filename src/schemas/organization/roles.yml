@@ -1,0 +1,53 @@
+---
+version: "1.0"
+
+generics:
+  - name: Device
+    label: Device Roles
+    include_in_menu: false
+    icon: "mdi:account-key"
+    namespace: Role
+    attributes:
+      - name: role
+        label: Role
+        kind: Dropdown
+        unique: false
+        optional: true
+        choices:
+          - name: leaf
+            label: Leaf Switch
+          - name: spine
+            label: Spine Switch
+          - name: border_leaf
+            label: Border Leaf Switch
+          - name: core_router
+            label: Core Router
+          - name: edge_router
+            label: Edge Router
+          - name: firewall
+            label: Firewall
+          - name: access_switch
+            label: Access Switch
+          - name: distribution_switch
+            label: Distribution Switch
+
+  - name: Interface
+    label: Interfaces Roles
+    include_in_menu: false
+    icon: "mdi:account-key"
+    namespace: Role
+    attributes:
+      - name: role
+        label: Role
+        kind: Dropdown
+        unique: false
+        optional: true
+        choices:
+          - name: l3_uplink
+            label: L3 Uplink
+          - name: l2_uplink
+            label: L2 Uplink
+          - name: l3_downlink
+            label: L3 Downlink
+          - name: l2_downlink
+            label: L2 Downlink
