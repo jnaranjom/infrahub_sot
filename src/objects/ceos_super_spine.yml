@@ -1,0 +1,50 @@
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: TemplateNetworkDevice
+  data:
+    - template_name: cEOS-SUPER_SPINE
+      description: Arista cEOS Super Spine Device
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: TemplateNetworkInterface
+  data:
+    - template_name: Management1
+      name: Management1
+      device: cEOS-SUPER_SPINE
+      role: management
+    - template_name: eth1
+      name: eth1
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth2
+      name: eth2
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth3
+      name: eth3
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth4
+      name: eth4
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth5
+      name: eth5
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth6
+      name: eth6
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth7
+      name: eth7
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink
+    - template_name: eth8
+      name: eth8
+      device: cEOS-SUPER_SPINE
+      role: l3_downlink

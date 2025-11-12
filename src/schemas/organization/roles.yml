@@ -51,3 +51,5 @@ generics:
             label: L3 Downlink
           - name: l2_downlink
             label: L2 Downlink
+          - name: management
+            label: Management

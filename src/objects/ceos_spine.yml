@@ -1,0 +1,50 @@
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: TemplateNetworkDevice
+  data:
+    - template_name: cEOS-SPINE
+      description: Arista cEOS Spine Device
+---
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: TemplateNetworkInterface
+  data:
+    - template_name: Management1
+      name: Management1
+      device: cEOS-SPINE
+      role: management
+    - template_name: eth1
+      name: eth1
+      device: cEOS-SPINE
+      role: l3_downlink
+    - template_name: eth2
+      name: eth2
+      device: cEOS-SPINE
+      role: l3_downlink
+    - template_name: eth3
+      name: eth3
+      device: cEOS-SPINE
+      role: l3_downlink
+    - template_name: eth4
+      name: eth4
+      device: cEOS-SPINE
+      role: l3_downlink
+    - template_name: eth5
+      name: eth5
+      device: cEOS-SPINE
+      role: l3_uplink
+    - template_name: eth6
+      name: eth6
+      device: cEOS-SPINE
+      role: l3_uplink
+    - template_name: eth7
+      name: eth7
+      device: cEOS-SPINE
+      role: l3_uplink
+    - template_name: eth8
+      name: eth8
+      device: cEOS-SPINE
+      role: l3_uplink

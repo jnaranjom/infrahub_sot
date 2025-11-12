@@ -1,0 +1,37 @@
+---
+apiVersion: infrahub.app/v1
+kind: Menu
+spec:
+  data:
+    - namespace: Services
+      order_weight: 5000    
+      name: Mainmenu
+      label: Services
+      icon: "mdi:magnify"
+      children:
+        data:
+          - namespace: Ntpservice
+            name: NtpService
+            label: NTP Services
+            kind: ServicesNtpService
+            icon: "mdi:clock-time-four-outline"
+            children:
+              data:
+                - namespace: Ntpservice
+                  name: NtpServer
+                  label: NTP Servers
+                  kind: ServicesNTPServer
+                  icon: "mdi:clock-time-four"
+
+          - namespace: Dnsservice
+            name: DnsService
+            label: DNS Services
+            kind: ServicesDNSService
+            icon: "mdi:magnify"
+            children:
+              data:
+                - namespace: Dnsservice
+                  name: DnsServer
+                  label: DNS Servers
+                  kind: ServicesDnsServer
+                  icon: "mdi:magnify"
